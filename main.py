@@ -8,9 +8,17 @@ def main():
     """Main function for the sorting visualizer"""
     print("Sorting Visualizer")
     random_array = utils.generate_random_array(20, 200)
-    print(random_array)
-    sorted_array = sorting_algorithms.bubble_sort(random_array)
-    print(sorted_array)
+    print("Unsorted arr", random_array)
+    # Generator object returned by bubble_sort
+    print("Bubble sort")
+    bubble_sort_generator = sorting_algorithms.bubble_sort(random_array.copy())
+    # Iterate over the generator object
+    for arr in bubble_sort_generator:
+        print(arr)
+    print("Selection sort")
+    selection_sort_generator = sorting_algorithms.selection_sort(random_array.copy())
+    for arr in selection_sort_generator:
+        print(arr)
 
     return 0
 
